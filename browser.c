@@ -50,7 +50,7 @@ int main(void) {
          return EXIT_FAILURE;
       }
    /* Ok, der User wird auf die Willkommen-Seite weitergeleitet.
-    * Die URL an Ihre Bed�rfnisse anpassen */
+    * Die URL an Ihre Beduerfnisse anpassen */
    print_location("http://localhost/welcome.html");
    return EXIT_SUCCESS;
 }
