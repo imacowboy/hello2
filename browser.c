@@ -1,12 +1,11 @@
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-/* Listing fragt REMOTE_ADDR ab. Lässt sich der Wert nicht
- * auslesen, gibt das CGI-Programm den Statuscode 500 zurück.
+/* Listing fragt REMOTE_ADDR ab. Laesst sich der Wert nicht
+ * auslesen, gibt das CGI-Programm den Statuscode 500 zurueck.
  * Ansonsten werden die verbotenen IP-Adressen in forbidden mit
- * REMOTE_ADDR überprüft und entsprechende Maßnahmen getroffen. */
+ * REMOTE_ADDR ueberprueft und entsprechende Massnahmen getroffen. */
 
 /* die Liste der IP-Adressen, die keinen Zugriff auf die Seite
  * haben sollen */
@@ -19,8 +18,8 @@ char *forbidden[] = {
  */
 void print_location(char *url) {
    printf("Location: %s\n\n", url);
-   /* für den Fall, dass ein alter Browser keine
-    * automatische Weiterleitung unterstützt */
+   /* fuer den Fall, dass ein alter Browser keine
+    * automatische Weiterleitung unterstuetzt */
    printf("Content-Type: text/html\n\n");
    printf("<html><head>\n");
    printf("<title>Weiterleitung zu %s</title>\n",url);
@@ -29,7 +28,7 @@ void print_location(char *url) {
    printf("</pre></body></html>\n");
 }
 
-/* Statuscode zurückgeben */
+/* Statuscode zurueckgeben */
 void print_status(char *status) {
    printf("Status: %s", status);
 }
@@ -51,7 +50,7 @@ int main(void) {
          return EXIT_FAILURE;
       }
    /* Ok, der User wird auf die Willkommen-Seite weitergeleitet.
-    * Die URL an Ihre Bedürfnisse anpassen */
+    * Die URL an Ihre Bedï¿½rfnisse anpassen */
    print_location("http://localhost/welcome.html");
    return EXIT_SUCCESS;
 }
